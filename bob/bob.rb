@@ -1,21 +1,14 @@
 class Bob
 
    def hey (s)
-
-      # Say nothing
-      if !s || s == ''
+      case s
+      when nil,''       # Say nothing
          'Fine. Be that way.'
-
-      # Shouting
-      elsif s == s.upcase
+      when s.upcase # Shouting
          'Woah, chill out!'
-
-      # Question
-      elsif s[-1] == '?'
+      when /\?$/     # Question
          'Sure.'
-
-      # Statement
-      else
+      else          # Statement
          'Whatever.'
       end
    end
