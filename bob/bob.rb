@@ -4,19 +4,19 @@ class Bob
 
       # Say nothing
       if !s || s == ''
-         return 'Fine. Be that way.'
+         'Fine. Be that way.'
 
       # Shouting
       elsif s == s.upcase
-         return 'Woah, chill out!'
+         'Woah, chill out!'
 
       # Question
       elsif s[-1] == '?'
-         return 'Sure.'
+         'Sure.'
 
       # Statement
       else
-         return 'Whatever.'
+         'Whatever.'
       end
    end
 end
