@@ -2,30 +2,30 @@ class Bob
 
    def hey (sentence)
       case
-      when match_say_nothing?(sentence)
+      when say_nothing?(sentence)
          'Fine. Be that way.'
-      when match_yelling?(sentence)
+      when yelling?(sentence)
          'Woah, chill out!'
-      when match_asking?(sentence)
+      when asking?(sentence)
          'Sure.'
-      when match_statement?(sentence)
+      when statement?(sentence)
          'Whatever.'
       end
    end
 
-   def match_say_nothing?(string)
-      !string || string == ''
+   def say_nothing?(string)
+      string.nil? || string.empty?
    end
 
-   def match_yelling?(string)
+   def yelling?(string)
       string == string.upcase
    end
 
-   def match_asking?(string)
+   def asking?(string)
       string.end_with? '?'
    end
 
-   def match_statement?(string)
+   def statement?(string)
       true
    end
 
