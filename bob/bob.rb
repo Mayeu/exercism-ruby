@@ -1,4 +1,4 @@
-class String
+class Message < String
   def saying_nothing?
     self.empty?
   end
@@ -14,11 +14,11 @@ end
 
 class Bob
   def hey (sentence)
-    sentence = sentence.to_s
+    message = Message.new sentence.to_s
 
-    return 'Fine. Be that way.' if sentence.saying_nothing?
-    return 'Woah, chill out!'   if sentence.yelling?
-    return 'Sure.'              if sentence.asking?
+    return 'Fine. Be that way.' if message.saying_nothing?
+    return 'Woah, chill out!'   if message.yelling?
+    return 'Sure.'              if message.asking?
 
     'Whatever.'
   end
