@@ -1,14 +1,14 @@
 class Message < String
   def saying_nothing?
-    self.empty?
+    empty?
   end
 
   def yelling?
-    self.upcase == self
+    self == upcase
   end
 
   def asking?
-    self.end_with? '?'
+    end_with? '?'
   end
 end
 
