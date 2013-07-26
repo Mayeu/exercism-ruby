@@ -16,10 +16,15 @@ class Bob
   def hey (sentence)
     message = Message.new sentence.to_s
 
-    return 'Fine. Be that way.' if message.saying_nothing?
-    return 'Woah, chill out!'   if message.yelling?
-    return 'Sure.'              if message.asking?
-
-    'Whatever.'
+    case
+    when message.saying_nothing?
+      'Fine. Be that way.'
+    when message.yelling?
+      'Woah, chill out!'
+    when message.asking?
+      'Sure.'
+    else
+      'Whatever.'
+    end
   end
 end
