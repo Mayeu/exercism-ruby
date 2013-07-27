@@ -17,7 +17,7 @@ class Message < String
 end
 
 class Bob
-  def hey (sentence)
+  def hey(sentence)
     message = Message.new sentence
 
     case
