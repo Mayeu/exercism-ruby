@@ -1,6 +1,6 @@
 class Message < String
-  def initialize(string)
-    super string.to_s
+  def initialize(sentence)
+    super sentence.to_s
   end
 
   def saying_nothing?
