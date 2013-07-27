@@ -1,4 +1,8 @@
 class Message < String
+  def initialize(string)
+    super string.to_s
+  end
+
   def saying_nothing?
     empty?
   end
@@ -14,7 +18,7 @@ end
 
 class Bob
   def hey (sentence)
-    message = Message.new sentence.to_s
+    message = Message.new sentence
 
     case
     when message.saying_nothing?
