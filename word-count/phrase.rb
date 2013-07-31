@@ -4,23 +4,19 @@
 class Phrase
   def initialize(phrase)
     @phrase = phrase.to_s
-    phrase_normalize
+    normalize_phrase
     @word_list = get_word_list
   end
 
   def word_count
-    counted_word = Hash.new
-
-    get_uniq_word.each {|word|
+    get_uniq_word.each_with_object({}) do |word, counted_word|
       counted_word[word] = @word_list.count(word)
-    }
-
-    counted_word
+    end
   end
 
   private
 
-  def phrase_normalize
+  def normalize_phrase
     @phrase.downcase!
   end
 
