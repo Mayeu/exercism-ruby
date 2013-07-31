@@ -1,21 +1,18 @@
-# Cleary not ideal:
-# - enumerating punctuation is not really efficient
-# - word_count is not easily readable/understandable
+# A little better than the last one.
+# Not sure if word_count is the most
+# expressive/clean possible yet !
 class Phrase
   def initialize(phrase)
     @phrase = phrase.to_s
-    normalize
+    phrase_normalize
+    @word_list = get_word_list
   end
 
   def word_count
     counted_word = Hash.new
 
-    @phrase.split(" ").each {|word|
-        if counted_word.key?(word)
-          counted_word[word] += 1
-        else
-          counted_word[word] = 1
-        end
+    get_uniq_word.each {|word|
+      counted_word[word] = @word_list.count(word)
     }
 
     counted_word
@@ -23,13 +20,15 @@ class Phrase
 
   private
 
-  def normalize
+  def phrase_normalize
     @phrase.downcase!
-    remove_punctuation
-    @phrase
   end
 
-  def remove_punctuation
-    @phrase.tr! '!?#@\.,&$%^:', ''
+  def get_word_list
+    @phrase.scan(/\w+/)
+  end
+
+  def get_uniq_word
+    @word_list.uniq
   end
 end
