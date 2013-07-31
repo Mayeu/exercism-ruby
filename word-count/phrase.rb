@@ -1,6 +1,3 @@
-# A little better than the last one.
-# Not sure if word_count is the most
-# expressive/clean possible yet !
 class Phrase
   def initialize(phrase)
     @phrase = phrase.to_s
