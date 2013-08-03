@@ -1,7 +1,6 @@
 class Phrase
   def initialize(phrase)
-    @phrase = normalize(phrase)
-    @words  = separate_words
+    @words = normalize(phrase)
   end
 
   def word_count
@@ -13,11 +12,7 @@ class Phrase
   private
 
   def normalize(phrase)
-    phrase.to_s.downcase
-  end
-
-  def separate_words
-    @phrase.scan(/\w+/)
+    phrase.to_s.downcase.scan(/\w+/)
   end
 
   def unique_words
