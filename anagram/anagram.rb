@@ -4,9 +4,9 @@ class Anagram
   end
 
   def match(words)
-    words.each_with_object([]) do |word, match|
+    words.each_with_object([]) do |word, matches|
       if @letters == breaks(word)
-        match << word
+        matches << word
       end
     end
   end
