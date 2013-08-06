@@ -1,13 +1,11 @@
 class Anagram
   def initialize(word)
-    @letters = break_in_letters word
+    @letters = break_in_letters(word)
   end
 
   def match(words)
-    words.each_with_object([]) do |word, matches|
-      if @letters == break_in_letters(word)
-        matches << word
-      end
+    words.select do |word|
+      @letters == break_in_letters(word)
     end
   end
 
