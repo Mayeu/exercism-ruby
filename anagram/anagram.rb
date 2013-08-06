@@ -14,6 +14,6 @@ class Anagram
   private
 
   def breaks(word)
-    word.to_s.downcase.split('').sort
+    word.to_s.downcase.chars.sort
   end
 end
